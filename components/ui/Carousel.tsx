@@ -20,15 +20,13 @@ function Carousel({ images }: CarouselProps) {
   }, []);
 
   return (
-    <div className="relative w-full h-full">
-      <div className="relative w-full h-full">
+    <div className="relative w-full h-full overflow-hidden flex justify-center items-center">
+      <div className="w-full h-full flex justify-center items-center">
         <Image
           src={images[currentImage]}
           alt="Carousel Image"
           fill
           priority
-          className="object-cover object-center"
-          sizes="100vw"
         ></Image>
       </div>
       <div className="absolute top-1/2 left-6 transform -translate-y-1/2">

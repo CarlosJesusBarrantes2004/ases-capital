@@ -13,12 +13,20 @@ interface CardStackCarouselProps {
     icon: string;
     description: string;
   }[];
+  color?: "yellow" | "blue" | "red" | "green";
 }
 
-function CardStackCarousel({ cards }: CardStackCarouselProps) {
+const colorClasses = {
+  yellow: "bg-yellow-500",
+  blue: "bg-blue-500",
+  red: "bg-red-500",
+  green: "bg-green-500",
+} as const;
+
+function CardStackCarousel({ cards, color }: CardStackCarouselProps) {
   return (
     <div
-      className="w-full max-w-72 sm:max-w-sm md:max-w-md mx-auto p-4"
+      className="w-full max-w-60 sm:max-w-sm md:max-w-md mx-auto p-4"
       role="region"
       aria-label="Carrusel de servicios"
     >
@@ -48,12 +56,14 @@ function CardStackCarousel({ cards }: CardStackCarouselProps) {
               ></div>
               <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
                 <div
-                  className="bg-red-500 rounded-full p-4 mb-4"
+                  className={`${
+                    color ? colorClasses[color] : ""
+                  } rounded-full p-4 mb-4`}
                   aria-hidden="true"
                 >
                   <span className="text-3xl">{card.icon}</span>
                 </div>
-                <h3 className="text-2xl font-bold tracking-wider">
+                <h3 className="text-2xl font-bold tracking-wider text-center">
                   {card.title}
                 </h3>
                 <p className="sr-only">{card.description}</p>

@@ -6,14 +6,14 @@ interface VideoCardProps {
 
 function VideoCard({ title, url, description }: VideoCardProps) {
   return (
-    <article className="overflow-hidden rounded-lg shadow-lg bg-white">
+    <article className="overflow-hidden rounded-lg border border-gray-100 shadow-lg bg-white">
       <header className="p-4 border-b border-gray-200 text-center">
         <h2 className="text-xl font-semibold text-gray-800">{title}</h2>
       </header>
-      <div className="relative aspect-video h-96">
+      <div className="relative aspect-video h-96 overflow-hidden flex justify-center">
         <video
           src={url}
-          className="w-full h-full object-cover"
+          className=""
           controls
           preload="metadata"
           aria-label={`Video: ${title}`}

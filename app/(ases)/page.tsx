@@ -1,4 +1,4 @@
-import CardStackCarousel from "@/components/ases/CardStackCarousel";
+import CardStackCarousel from "@/components/ui/CardStackCarousel";
 import Carousel from "@/components/ui/Carousel";
 import InfoCard from "@/components/ui/InfoCard";
 import SectionContainer from "@/components/ui/SectionContainer";
@@ -92,11 +92,19 @@ function AsesPage() {
                 académica y profesional con la más alta calidad, proporcionados
                 por acesores altamente competentes de todas las especialidades"
             `}
+          color="red"
         ></SectionTitle>
-        <CardStackCarousel cards={SERVICES_CARDS}></CardStackCarousel>
+        <CardStackCarousel
+          cards={SERVICES_CARDS}
+          color="red"
+        ></CardStackCarousel>
       </SectionContainer>
       <SectionContainer id="sobrenosotros" ariaLabel="Sobre Nosotros">
-        <SectionTitle title="Sobre" highlight="Nosotros"></SectionTitle>
+        <SectionTitle
+          title="Sobre"
+          highlight="Nosotros"
+          color="red"
+        ></SectionTitle>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
           {ABOUT_CARDS.map((card, index) => (
             <InfoCard key={index} {...card}></InfoCard>
@@ -104,7 +112,11 @@ function AsesPage() {
         </div>
       </SectionContainer>
       <SectionContainer id="prensa" ariaLabel="Prensa">
-        <SectionTitle title="Nota de" highlight="Prensa"></SectionTitle>
+        <SectionTitle
+          title="Nota de"
+          highlight="Prensa"
+          color="red"
+        ></SectionTitle>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
           {VIDEOS.map((video, index) => (
             <VideoCard key={index} {...video}></VideoCard>
